@@ -17,7 +17,8 @@ export const Button = styled(Link)`
   transition: opacity 100ms linear, transform 50ms linear;
   z-index: 1;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 

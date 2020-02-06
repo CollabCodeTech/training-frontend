@@ -8,7 +8,8 @@ export const Action = styled(Link)`
   text-decoration: none;
   color: var(--color-floral-white);
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--color-peach);
   }
 `;

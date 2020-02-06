@@ -6,4 +6,6 @@ export const _gradientBg = css`
     var(--color-dark-slate-grey) 0%,
     var(--color-purple-navy) 20.83%
   );
+  background-repeat: no-repeat;
+  background-color: var(--color-purple-navy);
 `;
