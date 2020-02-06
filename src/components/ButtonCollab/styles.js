@@ -1,0 +1,29 @@
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+import { _h6 } from "../../styles/tools/Typography";
+
+export const Button = styled(Link)`
+  ${_h6};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  border-radius: var(--radius-big);
+  background-color: var(--color-fiery-rose);
+  color: var(--color-floral-white);
+  opacity: 0.9;
+  transition: opacity 100ms linear, transform 50ms linear;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+`;
+
+export const Content = styled.span``;
