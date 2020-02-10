@@ -49,8 +49,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-input {
+input, button {
 	font: inherit;
+}
+html,body {
+	height: 100%;
 }
 `;
 

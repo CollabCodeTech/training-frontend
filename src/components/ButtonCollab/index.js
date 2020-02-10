@@ -3,8 +3,8 @@ import { Button, Content } from "./styles";
 
 function ButtonCollab(props) {
   return (
-    <Button>
-      <Content>{props.children}</Content>
+    <Button {...props}>
+      <Content>{props.content}</Content>
     </Button>
   );
 }

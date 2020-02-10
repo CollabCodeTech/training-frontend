@@ -23,7 +23,6 @@ export const Icon = styled.img`
 export const Error = styled.span`
   ${_caption};
   color: var(--color-sandstorm);
-  padding-top: var(--gap-smaller);
   position: absolute;
   bottom: 0;
   left: 0;

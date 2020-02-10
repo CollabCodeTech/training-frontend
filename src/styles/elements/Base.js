@@ -7,6 +7,7 @@ const Base = createGlobalStyle`
     ${_gradientBg}
     height: 100vh;
     font-family: 'Comfortaa', sans-serif;
+    line-height: 1.5em;
   }
 `;
 

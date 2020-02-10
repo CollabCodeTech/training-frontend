@@ -10,6 +10,7 @@ export const Button = styled(Link)`
   justify-content: center;
   position: relative;
   text-decoration: none;
+  border: none;
   border-radius: var(--radius-big);
   background-color: var(--color-fiery-rose);
   color: var(--color-floral-white);

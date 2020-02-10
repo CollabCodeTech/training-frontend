@@ -7,7 +7,16 @@ import LabelCollab from "../LabelCollab";
 import InputCollab from "../InputCollab";
 import { Content, Icon, Error } from "./styles";
 
-function FieldCollab({ content, id, htmlFor, type = "text", msgError }) {
+function FieldCollab({
+  content,
+  id,
+  name,
+  value,
+  htmlFor,
+  type = "text",
+  msgError,
+  onChange
+}) {
   const [show, setShow] = useState(false);
 
   function showPassword(event) {
@@ -41,7 +50,13 @@ function FieldCollab({ content, id, htmlFor, type = "text", msgError }) {
   return (
     <LabelCollab htmlFor={htmlFor} type={type}>
       <Content>{content}</Content>
-      <InputCollab id={id} type={defineType()} />
+      <InputCollab
+        id={id}
+        name={name}
+        type={defineType()}
+        value={value}
+        onChange={onChange}
+      />
       {showIconVisibility()}
       {showError()}
     </LabelCollab>

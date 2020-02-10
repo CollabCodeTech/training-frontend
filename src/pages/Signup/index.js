@@ -3,17 +3,17 @@ import React from "react";
 import PageAuth from "../../containers/PageAuth";
 import ContentAuth from "../../containers/ContentAuth";
 import HeaderAuth from "../../containers/HeaderAuth";
-import FormLogin from "../../containers/FormLogin";
+import FormSignup from "../../containers/FormSignup";
 
-function Login() {
+function Signup() {
   return (
     <PageAuth>
       <ContentAuth>
         <HeaderAuth />
-        <FormLogin />
+        <FormSignup />
       </ContentAuth>
     </PageAuth>
   );
 }
 
-export default Login;
+export default Signup;

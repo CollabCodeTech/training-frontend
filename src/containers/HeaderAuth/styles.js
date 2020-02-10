@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Logo } from "../../components/LogoCollab/styles.js";
 
 export const Header = styled.header`
-  padding-top: var(--gap-small);
   margin-bottom: var(--gap-big);
   text-align: center;
 

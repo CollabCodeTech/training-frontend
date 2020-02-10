@@ -8,8 +8,8 @@ import { Action } from "../../components/ActionCollab/styles";
 import { _h4 } from "../../styles/tools/Typography";
 
 export const Form = styled.form`
-  padding-left: var(--gap-small);
-  padding-right: var(--gap-small);
+  box-sizing: border-box;
+  padding: 0 var(--gap-small) var(--gap-medium);
 
   & > ${Title} {
     text-align: center;

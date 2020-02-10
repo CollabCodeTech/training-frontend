@@ -6,10 +6,11 @@ export const Input = styled.input`
   --widthIcon: 24px;
   ${_h6};
   box-sizing: border-box;
-  color: var(--color-fiery-rose);
+  color: var(--color-platinum);
   background-color: transparent;
   width: 100%;
   border: none;
+  outline: none;
   border-bottom: 1px solid var(--color-floral-white);
   padding: var(--gap-smaller) calc(var(--widthIcon) + var(--gap-smaller) * 2)
     var(--gap-smaller) 0;
