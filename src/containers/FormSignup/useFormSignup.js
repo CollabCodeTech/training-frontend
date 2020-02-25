@@ -35,7 +35,8 @@ function useObserver(sendForm) {
     user,
     handleChange,
     handleSubmit,
-    errors
+    errors,
+    setErrors
   };
 }
 

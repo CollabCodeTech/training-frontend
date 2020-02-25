@@ -19,7 +19,7 @@ function FieldCollab({
 }) {
   const [show, setShow] = useState(false);
 
-  function showPassword(event) {
+  function showPassword() {
     setShow(old => !old);
   }
 

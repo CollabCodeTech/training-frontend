@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import TitleCollab from "../../components/TitleCollab";
 import FieldCollab from "../../components/FieldCollab";
@@ -9,10 +10,20 @@ import useFormSignup from "./useFormSignup";
 import AuthService from "../../services/AuthService";
 
 function FormLogin() {
-  const { user, handleChange, handleSubmit, errors } = useFormSignup(sendUser);
+  const { user, handleChange, handleSubmit, errors, setErrors } = useFormSignup(
+    sendUser
+  );
+  const history = useHistory();
 
   function sendUser() {
-    AuthService.signup(user);
+    AuthService.signup(user)
+      .then(function() {
+        history.replace("/dashboard");
+      })
+      .catch(function({ response }) {
+        const { field, error } = response.body[0];
+        setErrors({ [field]: error });
+      });
   }
 
   return (
@@ -49,6 +60,7 @@ function FormLogin() {
         onChange={handleChange}
         msgError={errors.password}
       />
+
       <ButtonCollab content="Enviar" as="button" />
       <ActionCollab content="Já tenho cadastro" to="/auth/login" />
     </FormAuth>

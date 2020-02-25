@@ -58,5 +58,9 @@ describe("Page Signup", function() {
 
   it("Send form with all fields valid", function() {
     cy.visit("/auth/signup");
+    cy.get("input[name=name]").type("Henri");
+    cy.get("input[name=email]").type("marco.bruno.br@gmail.com");
+    cy.get("input[name=password]").type("q1w2e3r4");
+    cy.contains("Enviar").click();
   });
 });
