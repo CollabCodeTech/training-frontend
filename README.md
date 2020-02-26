@@ -59,6 +59,12 @@ This project is licensed under the MPL 2.0 License - see the [LICENSE](LICENSE.m
 
 Thanks to all members of CollabCode's community for the support! We love you!
 
+## Next Releases
+
+- [ ] One course and video player
+- [ ] Panel to other person that we will invite to send courses
+- [ ] Open panel to community to send courses
+
 ## Questions
 
 - [Discord CollabCode](http://bit.ly/discord-collabcode)
