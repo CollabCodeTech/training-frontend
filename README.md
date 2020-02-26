@@ -61,9 +61,9 @@ Thanks to all members of CollabCode's community for the support! We love you!
 
 ## Next Releases
 
-- [ ] One course and video player
-- [ ] Panel to other person that we will invite to send courses
-- [ ] Open panel to community to send courses
+- [ ] One course and video player (15/03/2020)
+- [ ] Panel to other person that we will invite to send courses (15/05/2020)
+- [ ] Open panel to community to send courses (15/07/2020)
 
 ## Questions
 
