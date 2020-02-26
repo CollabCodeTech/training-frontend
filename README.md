@@ -8,7 +8,11 @@ An Open Source online course platform. It's the FrontEnd that use React.
 
 1. Fork this repo and clone in your machine;
 
-2. Change directory to `training-frontend` where you cloned it;
+2. Change directory to `training-frontend` where you cloned it:
+
+```bash
+git clone https://github.com/CollabCodeTech/training-frontend
+```
 
 3. At the terminal, run:
 
