@@ -1,4 +1,4 @@
-![CollabCode](read-files/collabcode.png "Logo da CollabCode")
+![CollabCode](readme-files/collabcode.png "Logo da CollabCode")
 
 # CollabCode Training
 
