@@ -17,8 +17,7 @@ git clone https://github.com/CollabCodeTech/training-frontend
 3. At the terminal, run:
 
 ```bash
-npm install
-npm start
+docker-compose up -d
 ```
 
 4. Open up [localhost:5000](http://localhost:3000) and start using it
@@ -27,6 +26,8 @@ npm start
 
 - Npm
 - Node (>=12.16.1)
+- Docker
+- Docker compose
 
 ## Running the tests when you are developing
 
