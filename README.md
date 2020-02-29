@@ -20,7 +20,7 @@ git clone https://github.com/CollabCodeTech/training-frontend
 docker-compose up -d
 ```
 
-4. Open up [localhost:5000](http://localhost:3000) and start using it
+4. Open up [localhost:3000](http://localhost:3000) and start using it
 
 ### Prerequisites
 
