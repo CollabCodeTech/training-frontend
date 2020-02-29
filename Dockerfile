@@ -1,6 +1,7 @@
 FROM node:12 as training-frontend
-WORKDIR /apps
+WORKDIR /app
+COPY package.json ./
+RUN npm i --silent
 COPY . ./
 EXPOSE 3000
-RUN npm i --silent
-CMD ["npm", "start"]
+CMD start.sh
