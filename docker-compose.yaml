@@ -2,5 +2,9 @@ version: "3"
 services:
   frontend:
     build: .
+    volumes:
+      - ".:/app"
     ports:
-      - "3000:3000"
+      - "3000:${PORT}"
+    environment:
+      - NODE_ENV
