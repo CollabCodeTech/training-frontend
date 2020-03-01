@@ -1,7 +1,1 @@
 node_modules
-.git
-.vscode
-readme-files
-README.md
-cypress*
-build
