@@ -1,8 +1,10 @@
 import request from "superagent";
 
-function signup(user, callback) {
+function signup(user) {
+  const { REACT_APP_API_AUTH } = process.env;
+
   return request
-    .post("http://localhost:5001/api/user")
+    .post(`${REACT_APP_API_AUTH}/api/user`)
     .set("Content-Type", "application/json")
     .send(user);
 }

@@ -1,5 +1,24 @@
-version: "3"
+version: "3.7"
+
 services:
+  email:
+    image: collabcode/training-email
+
+  auth:
+    image: collabcode/training-auth
+    environment:
+      - NODE_ENV
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
+
   frontend:
     build: .
     volumes:
@@ -8,3 +27,6 @@ services:
       - "3000:${PORT}"
     environment:
       - NODE_ENV
+    depends_on:
+      - auth
+      - email
