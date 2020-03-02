@@ -32,7 +32,7 @@ docker-compose up -d
 
 ## Running the tests when you are developing
 
-In first time:
+Just the first time:
 
 ```
 npm i
