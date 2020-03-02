@@ -17,6 +17,7 @@ git clone https://github.com/CollabCodeTech/training-frontend
 3. At the terminal, run:
 
 ```bash
+cd training-frontend
 cp .env.example .env
 docker-compose up -d
 ```
