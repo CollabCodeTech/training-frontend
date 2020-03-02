@@ -32,6 +32,12 @@ docker-compose up -d
 
 ## Running the tests when you are developing
 
+In first time:
+
+```
+npm i
+```
+
 ```bash
 npm run cy:open
 ```
