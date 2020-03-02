@@ -21,9 +21,8 @@ function FormLogin() {
         history.replace("/dashboard");
       })
       .catch(function({ response }) {
-        console.log("response", response);
-        // const { field, error } = response.body[0];
-        // setErrors({ [field]: error });
+        const { field, error } = response.body[0];
+        setErrors({ [field]: error });
       });
   }
 
