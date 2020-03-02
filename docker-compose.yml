@@ -8,6 +8,8 @@ services:
     image: collabcode/training-auth
     environment:
       - NODE_ENV
+    ports:
+      - "3001:3001"
     depends_on:
       - mongo
 
