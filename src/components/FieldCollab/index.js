@@ -1,10 +1,10 @@
-import React from 'react';
-import iconVisibilityOff from '../../icons/actions/visibility_off.svg';
-import iconVisibility from '../../icons/actions/visibility.svg';
-import LabelCollab from '../LabelCollab';
-import InputCollab from '../InputCollab';
-import useFieldCollab from './useFieldCollab';
-import { Content, Icon, Error } from './styles';
+import React from "react";
+import iconVisibilityOff from "../../icons/actions/visibility_off.svg";
+import iconVisibility from "../../icons/actions/visibility.svg";
+import LabelCollab from "../LabelCollab";
+import InputCollab from "../InputCollab";
+import useFieldCollab from "./useFieldCollab";
+import { Content, Icon, Error } from "./styles";
 
 const FieldCollab = ({
   content,
@@ -12,14 +12,14 @@ const FieldCollab = ({
   name,
   value,
   htmlFor,
-  type = 'text',
+  type = "text",
   msgError,
   onChange
 }) => {
   const { show, showPassword } = useFieldCollab();
 
   function showIconVisibility(type) {
-    if (type === 'password') {
+    if (type === "password") {
       return (
         <Icon
           src={!show ? iconVisibilityOff : iconVisibility}
@@ -34,10 +34,10 @@ const FieldCollab = ({
   }
 
   function defineType(type) {
-    if (type === 'password' && !show) {
-      return 'password';
-    } else if (type === 'password' && show) {
-      return 'text';
+    if (type === "password" && !show) {
+      return "password";
+    } else if (type === "password" && show) {
+      return "text";
     }
     return type;
   }
