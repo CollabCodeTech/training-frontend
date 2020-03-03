@@ -1,30 +1,25 @@
-import React, { useState } from "react";
+import React from 'react';
+import iconVisibilityOff from '../../icons/actions/visibility_off.svg';
+import iconVisibility from '../../icons/actions/visibility.svg';
+import LabelCollab from '../LabelCollab';
+import InputCollab from '../InputCollab';
+import useFieldCollab from './useFieldCollab';
+import { Content, Icon, Error } from './styles';
 
-import iconVisibilityOff from "../../icons/actions/visibility_off.svg";
-import iconVisibility from "../../icons/actions/visibility.svg";
-
-import LabelCollab from "../LabelCollab";
-import InputCollab from "../InputCollab";
-import { Content, Icon, Error } from "./styles";
-
-function FieldCollab({
+const FieldCollab = ({
   content,
   id,
   name,
   value,
   htmlFor,
-  type = "text",
+  type = 'text',
   msgError,
   onChange
-}) {
-  const [show, setShow] = useState(false);
+}) => {
+  const { show, showPassword } = useFieldCollab();
 
-  function showPassword() {
-    setShow(old => !old);
-  }
-
-  function showIconVisibility() {
-    if (type === "password") {
+  function showIconVisibility(type) {
+    if (type === 'password') {
       return (
         <Icon
           src={!show ? iconVisibilityOff : iconVisibility}
@@ -34,15 +29,15 @@ function FieldCollab({
     }
   }
 
-  function showError() {
+  function showError(msgError) {
     return msgError && <Error>{msgError}</Error>;
   }
 
-  function defineType() {
-    if (type === "password" && !show) {
-      return "password";
-    } else if (type === "password" && show) {
-      return "text";
+  function defineType(type) {
+    if (type === 'password' && !show) {
+      return 'password';
+    } else if (type === 'password' && show) {
+      return 'text';
     }
     return type;
   }
@@ -53,14 +48,14 @@ function FieldCollab({
       <InputCollab
         id={id}
         name={name}
-        type={defineType()}
+        type={defineType(type)}
         value={value}
         onChange={onChange}
       />
-      {showIconVisibility()}
-      {showError()}
+      {showIconVisibility(type)}
+      {showError(msgError)}
     </LabelCollab>
   );
-}
+};
 
 export default FieldCollab;
