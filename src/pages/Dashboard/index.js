@@ -1,7 +1,9 @@
 import React from "react";
 
+import HeaderDashboard from "../../containers/HeaderDashboard";
+
 function Dashboard() {
-  return <h1>Dashboard</h1>;
+  return <HeaderDashboard />;
 }
 
 export default Dashboard;
