@@ -1,7 +1,4 @@
 FROM node:12 as training-frontend
 WORKDIR /app
-COPY package.json ./
-RUN npm i --silent
 COPY . ./
-RUN chmod +x ./start.sh
-CMD ./start.sh
+RUN npm i --silent

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { _caption } from "../../styles/tools/Typography";
+import styled from 'styled-components';
+import { _caption } from '../../styles/tools/Typography';
 
 export const Content = styled.span`
   display: block;
