@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-
+import React from "react";
 import iconVisibilityOff from "../../icons/actions/visibility_off.svg";
 import iconVisibility from "../../icons/actions/visibility.svg";
-
 import LabelCollab from "../LabelCollab";
 import InputCollab from "../InputCollab";
+import useFieldCollab from "./useFieldCollab";
 import { Content, Icon, Error } from "./styles";
 
-function FieldCollab({
+const FieldCollab = ({
   content,
   id,
   name,
@@ -16,14 +15,10 @@ function FieldCollab({
   type = "text",
   msgError,
   onChange
-}) {
-  const [show, setShow] = useState(false);
+}) => {
+  const { show, showPassword } = useFieldCollab();
 
-  function showPassword() {
-    setShow(old => !old);
-  }
-
-  function showIconVisibility() {
+  function showIconVisibility(type) {
     if (type === "password") {
       return (
         <Icon
@@ -34,11 +29,11 @@ function FieldCollab({
     }
   }
 
-  function showError() {
+  function showError(msgError) {
     return msgError && <Error>{msgError}</Error>;
   }
 
-  function defineType() {
+  function defineType(type) {
     if (type === "password" && !show) {
       return "password";
     } else if (type === "password" && show) {
@@ -53,14 +48,14 @@ function FieldCollab({
       <InputCollab
         id={id}
         name={name}
-        type={defineType()}
+        type={defineType(type)}
         value={value}
         onChange={onChange}
       />
-      {showIconVisibility()}
-      {showError()}
+      {showIconVisibility(type)}
+      {showError(msgError)}
     </LabelCollab>
   );
-}
+};
 
 export default FieldCollab;

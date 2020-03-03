@@ -6,17 +6,22 @@ import FieldCollab from "../../components/FieldCollab";
 import ButtonCollab from "../../components/ButtonCollab";
 import ActionCollab from "../../components/ActionCollab";
 import FormAuth from "../../containers/FormAuth";
-import useFormSignup from "./useFormSignup";
+import useValidation from "../../libs/validation/useValidation";
+import validation from "./validation";
 import AuthService from "../../services/AuthService";
 
 function FormLogin() {
-  const { user, handleChange, handleSubmit, errors, setErrors } = useFormSignup(
-    sendUser
-  );
+  const {
+    value,
+    handleChange,
+    handleSubmit,
+    errors,
+    setErrors
+  } = useValidation(validation, sendUser, "name", "email", "password");
   const history = useHistory();
 
   function sendUser() {
-    AuthService.signup(user)
+    AuthService.signup(value)
       .then(function() {
         history.replace("/dashboard");
       })
@@ -35,7 +40,7 @@ function FormLogin() {
         htmlFor="name"
         id="name"
         name="name"
-        value={user.name}
+        value={value.name}
         onChange={handleChange}
         msgError={errors.name}
       />
@@ -45,7 +50,7 @@ function FormLogin() {
         htmlFor="email"
         id="email"
         name="email"
-        value={user.email}
+        value={value.email}
         onChange={handleChange}
         msgError={errors.email}
       />
@@ -55,7 +60,7 @@ function FormLogin() {
         htmlFor="password"
         id="password"
         name="password"
-        value={user.value}
+        value={value.value}
         type="password"
         onChange={handleChange}
         msgError={errors.password}
