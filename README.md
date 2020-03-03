@@ -74,9 +74,9 @@ Thanks to all members of CollabCode's community for the support! We love you!
 
 ## Next Releases
 
-- [ ] One course and video player (**15 March 2020**)
-- [ ] Panel to other person that we will invite to send courses (**15 May 2020**)
-- [ ] Open panel to community to send courses (**15 July 2020**)
+- [ ] One course and video player (**15 March 2020**) _ashe_
+- [ ] Panel to other person that we will invite to send courses (**15 May 2020**) _aphelios_
+- [ ] Open panel to community to send courses (**15 July 2020**) _anivia_
 
 ## Questions
 
