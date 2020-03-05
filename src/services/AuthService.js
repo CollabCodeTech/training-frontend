@@ -9,4 +9,13 @@ function signup(user) {
     .send(user);
 }
 
-export default { signup };
+function forgot(email) {
+  const { REACT_APP_API_AUTH } = process.env;
+
+  return request
+    .post(`${REACT_APP_API_AUTH}/api/forgot_password`)
+    .set("Content-Type", "application/json")
+    .send(email)
+}
+
+export default { signup, forgot };
