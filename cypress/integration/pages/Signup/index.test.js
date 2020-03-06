@@ -63,4 +63,17 @@ describe("Page Signup", function() {
     cy.get("input[name=password]").type("q1w2e3r4");
     cy.contains("Enviar").click();
   });
+
+  it("Send the form with all fields valid and verify if the JWT cookie is save", function() {
+    Cypress.Cookies.debug(true);
+
+    cy.visit("/auth/signup");
+    cy.get("input[name=name]").type("Marco Bruno");
+    cy.get("input[name=email]").type("marco.bruno.br@gmail.com");
+    cy.get("input[name=password]").type("q1w2e3r4");
+    cy.contains("Enviar").click();
+    cy.clearCookie("jjj");
+    cy.setCookie("jjj", "thing");
+    cy.getCookie("jjj").should("have.property", "value", "thing");
+  });
 });
