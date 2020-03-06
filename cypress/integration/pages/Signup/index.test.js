@@ -1,3 +1,5 @@
+import UserBuilder from "../../../libs/user.builder";
+
 describe("Page Signup", function() {
   it("Open page on Desktop", function() {
     cy.visit("/auth/signup");
@@ -35,9 +37,11 @@ describe("Page Signup", function() {
     cy.contains("Senha é obrigatória");
   });
 
-  it("Send the form with name invalid", function() {
+  it("Send the form with name invalid that has only one char", function() {
+    const { name } = UserBuilder.nameInvalid();
+
     cy.visit("/auth/signup");
-    cy.get("input[name=name]").type("a");
+    cy.get("input[name=name]").type(name);
     cy.contains("Enviar").click();
     cy.contains("Nome tem que ter 2 ou mais caracteres");
   });
