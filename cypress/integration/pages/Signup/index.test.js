@@ -47,8 +47,10 @@ describe("Page Signup", function() {
   });
 
   it("Send the form with email invalid", function() {
+    const { email } = UserBuilder.emailInvalid();
+
     cy.visit("/auth/signup");
-    cy.get("input[name=email]").type("marco");
+    cy.get("input[name=email]").type(email);
     cy.contains("Enviar").click();
     cy.contains("Preencha com email válido");
   });
