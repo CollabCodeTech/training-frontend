@@ -67,23 +67,25 @@ describe("Page Signup", function() {
   it("Send the form with the fields name, email and password valid", function() {
     const { name } = UserBuilder.generateName();
     const { email } = UserBuilder.emailValid();
+    const { password } = UserBuilder.passwordValid();
 
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type(name);
     cy.get("input[name=email]").type(email);
-    cy.get("input[name=password]").type("q1w2e3r4");
+    cy.get("input[name=password]").type(password);
     cy.contains("Enviar").click();
   });
 
   it("Send the form with all fields valid and verify if the JWT cookie is save", function() {
     const { name } = UserBuilder.generateName();
     const { email } = UserBuilder.emailValid();
+    const { password } = UserBuilder.passwordValid();
     Cypress.Cookies.debug(true);
 
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type(name);
     cy.get("input[name=email]").type(email);
-    cy.get("input[name=password]").type("q1w2e3r4");
+    cy.get("input[name=password]").type(password);
     cy.contains("Enviar").click();
     cy.clearCookie("jjj");
     cy.setCookie("jjj", "thing");
