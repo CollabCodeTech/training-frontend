@@ -56,8 +56,10 @@ describe("Page Signup", function() {
   });
 
   it("Send the form with password invalid", function() {
+    const { password } = UserBuilder.passwordInvalid();
+
     cy.visit("/auth/signup");
-    cy.get("input[name=password]").type("1234567");
+    cy.get("input[name=password]").type(password);
     cy.contains("Enviar").click();
     cy.contains("Senha tem que ter 8 ou mais caracteres");
   });
