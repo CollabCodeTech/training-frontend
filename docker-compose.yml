@@ -8,6 +8,7 @@ services:
     image: collabcode/training-auth
     environment:
       - NODE_ENV
+      - COOKIE_OPTIONS=SameSite=None;
     ports:
       - "3001:3001"
     depends_on:

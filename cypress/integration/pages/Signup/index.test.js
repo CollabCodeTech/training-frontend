@@ -26,7 +26,7 @@ describe("Page Signup", function() {
     cy.get("input[name=password]");
   });
 
-  it("Send form without filling in the inputs", function() {
+  it("Send the form without filling in the inputs", function() {
     cy.visit("/auth/signup");
     cy.contains("Enviar").click();
 
@@ -35,28 +35,28 @@ describe("Page Signup", function() {
     cy.contains("Senha é obrigatória");
   });
 
-  it("Send form with name invalid", function() {
+  it("Send the form with name invalid", function() {
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type("a");
     cy.contains("Enviar").click();
     cy.contains("Nome tem que ter 2 ou mais caracteres");
   });
 
-  it("Send form with email invalid", function() {
+  it("Send the form with email invalid", function() {
     cy.visit("/auth/signup");
     cy.get("input[name=email]").type("marco");
     cy.contains("Enviar").click();
     cy.contains("Preencha com email válido");
   });
 
-  it("Send form with password invalid", function() {
+  it("Send the form with password invalid", function() {
     cy.visit("/auth/signup");
     cy.get("input[name=password]").type("1234567");
     cy.contains("Enviar").click();
     cy.contains("Senha tem que ter 8 ou mais caracteres");
   });
 
-  it("Send form with all fields valid", function() {
+  it("Send the form with all fields valid", function() {
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type("Henri");
     cy.get("input[name=email]").type("marco.bruno.br@gmail.com");
