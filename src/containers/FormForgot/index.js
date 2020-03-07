@@ -7,9 +7,20 @@ import ButtonCollab from "../../components/ButtonCollab";
 import FormAuth from "../../containers/FormAuth";
 import LabelCollab from "../../components/LabelCollab";
 
+import useValidation from "../../libs/validation/useValidation";
+import validation from "./validation";
+
 function FormForgot() {
+  const { value, handleChange, handleSubmit, errors } = useValidation(
+    validation,
+    sendFormForgot,
+    "email"
+  );
+
+  function sendFormForgot() {}
+
   return (
-    <FormAuth>
+    <FormAuth noValidate onSubmit={handleSubmit}>
       <TitleCollab content="Esqueci minha senha" />
 
       <LabelCollab
@@ -17,9 +28,17 @@ function FormForgot() {
         warning={true}
       />
 
-      <FieldCollab content="E-mail:" htmlFor="email" id="email" />
+      <FieldCollab
+        content="E-mail:"
+        htmlFor="email"
+        id="email"
+        name="email"
+        value={value.email}
+        msgError={errors.email}
+        onChange={handleChange}
+      />
 
-      <ButtonCollab content="Enviar" to="/dashboard" />
+      <ButtonCollab content="Enviar" to="/dashboard" as="button" />
     </FormAuth>
   );
 }
