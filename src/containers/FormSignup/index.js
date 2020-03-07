@@ -66,7 +66,7 @@ function FormLogin() {
         msgError={errors.password}
       />
 
-      <ButtonCollab content="Enviar" as="button" />
+      <ButtonCollab content="Enviar" />
       <ActionCollab content="Já tenho cadastro" to="/auth/login" />
     </FormAuth>
   );

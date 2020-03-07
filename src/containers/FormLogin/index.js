@@ -45,7 +45,7 @@ function FormLogin() {
         msgError={errors.password}
       />
 
-      <ButtonCollab content="Entrar" as="button" />
+      <ButtonCollab content="Entrar" />
       <ActionCollab content="Esqueci a senha" to="/auth/forgot" />
       <ActionCollab content="Criar conta" to="/auth/signup" />
     </FormAuth>
