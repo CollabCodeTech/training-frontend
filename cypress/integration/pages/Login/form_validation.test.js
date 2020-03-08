@@ -1,4 +1,4 @@
-describe("Page Login", function() {
+describe("Login form validation", function() {
   let $emailField, $passwordField, $submitButton;
 
   before(function() {
