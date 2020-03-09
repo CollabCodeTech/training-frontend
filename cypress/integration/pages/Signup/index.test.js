@@ -1,6 +1,10 @@
 import UserBuilder from "../../../libs/user.builder";
 
 describe("Page Signup", function() {
+  before(function() {
+    Cypress.Cookies.debug(true);
+  });
+
   it("Open page on Desktop", function() {
     cy.visit("/auth/signup");
   });
@@ -66,26 +70,32 @@ describe("Page Signup", function() {
 
   it("Send the form with the fields name, email and password valid", function() {
     const { name, email, password } = UserBuilder.randomUserInfo();
-    console.log(name);
 
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type(name);
     cy.get("input[name=email]").type(email);
     cy.get("input[name=password]").type(password);
     cy.contains("Enviar").click();
+    cy.location("pathname").should("include", "dashboard");
   });
 
-  it("Send the form with all fields valid and verify if the JWT cookie is save", function() {
+  it("Verify if the cookie jwt was create", function() {
     const { name, email, password } = UserBuilder.randomUserInfo();
-    Cypress.Cookies.debug(true);
 
+    cy.clearCookies();
     cy.visit("/auth/signup");
     cy.get("input[name=name]").type(name);
     cy.get("input[name=email]").type(email);
     cy.get("input[name=password]").type(password);
     cy.contains("Enviar").click();
-    cy.clearCookie("jjj");
-    cy.setCookie("jjj", "thing");
-    cy.getCookie("jjj").should("have.property", "value", "thing");
+    cy.location("pathname").should("include", "dashboard");
+    cy.contains("Dashboard").then(function() {
+      cy.getCookie("jwt")
+        .should("have.property", "value")
+        .and(
+          "match",
+          /^[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$/
+        );
+    });
   });
 });
