@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 import { _h6 } from "../../styles/tools/Typography";
 
-export const Button = styled(Link)`
+export const Button = styled(Link).attrs({ as: "button" })`
   ${_h6};
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
