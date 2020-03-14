@@ -22,6 +22,7 @@ function FormLogin() {
 
   function sendUser() {
     AuthService.signup(value)
+      .withCredentials()
       .then(function() {
         history.replace("/dashboard");
       })
