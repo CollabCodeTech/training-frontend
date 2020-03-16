@@ -38,7 +38,7 @@ function FormForgot() {
         onChange={handleChange}
       />
 
-      <ButtonCollab content="Enviar" to="/dashboard" as="button" />
+      <ButtonCollab content="Enviar" as="button" />
     </FormAuth>
   );
 }
