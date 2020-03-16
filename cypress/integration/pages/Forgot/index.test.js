@@ -6,7 +6,7 @@ describe("Page Forgot", function() {
     cy.get("input[name=email]");
   });
 
-  it("Send form without filling in the inputs", function() {
+  it("Send form without filling in the email input", function() {
     cy.visit("/auth/forgot");
     cy.contains("Enviar").click();
 
