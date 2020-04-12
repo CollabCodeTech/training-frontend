@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "cypress run",
     "eject": "react-scripts eject",
-    "cy:open": "cypress open",
+    "cy:open": "cypress open --browser chrome",
     "cy:ci": "docker exec frontend cypress run"
   },
   "eslintConfig": {
