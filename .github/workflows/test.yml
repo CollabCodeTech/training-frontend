@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [develop]
 
+  pull_request_review:
+    branches: [develop]
+
 jobs:
   build:
     runs-on: ubuntu-18.04
