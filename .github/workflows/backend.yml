@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Cypress
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: npm ci
+      - run: cp .cypress.env .env
+      - run: docker-compose up -d
+      - run: npm run cy:ci
+        env:
+          CI: true

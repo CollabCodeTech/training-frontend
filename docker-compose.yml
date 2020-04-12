@@ -3,33 +3,56 @@ version: "3.7"
 services:
   email:
     image: collabcode/training-email
+    container_name: "email"
+    networks:
+      - internal
 
   auth:
     image: collabcode/training-auth
+    container_name: "auth"
     environment:
       - NODE_ENV
     ports:
       - "3001:3001"
+    networks:
+      - internal
     depends_on:
       - mongo
 
   mongo:
     image: mongo
+    container_name: "mongo"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     ports:
       - "27017:27017"
+    networks:
+      - internal
 
   frontend:
-    build: .
-    volumes:
-      - ".:/app"
+    image: "cypress/included:4.3.0"
+    container_name: "frontend"
+    ipc: host
+    environment:
+      - NODE_ENV=local
+      - QT_X11_NO_MITSHM=1
+      - _X11_NO_MITSHM=1
+      - _MITSHM=0
+      - ELECTRON_ENABLE_STACK_DUMPING=1
     ports:
       - "3000:${PORT}"
-    environment:
-      - NODE_ENV
+    expose:
+      - "3000"
+    working_dir: /app
+    networks:
+      - internal
+    volumes:
+      - .:/app/
+    entrypoint: npm start
     depends_on:
       - auth
       - email
-    command: npm start
+networks:
+  internal:
+    driver: bridge
