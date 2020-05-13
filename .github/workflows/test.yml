@@ -10,6 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
 
     steps:
       - uses: actions/checkout@v2
