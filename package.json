@@ -20,7 +20,7 @@
     "test": "cypress run",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
-    "cy:ci": "docker exec frontend cypress run"
+    "cy:ci": "cypress run --record --key d61ddbce-04b9-464a-8c51-5adf4aef2b17"
   },
   "eslintConfig": {
     "extends": "react-app"

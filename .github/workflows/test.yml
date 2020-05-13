@@ -21,9 +21,24 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: npm ci
-      - run: cp .cypress.env .env
-      - run: docker-compose up -d
-      - run: npm run cy:ci
+      #- run: npm ci
+      #- run: cp .env.example .env
+      #- run: docker-compose up -d
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          install: true
+          record: true
+          parallel: true
+          browser: chrome
+          headless: true
+          group: "Ubuntu18.04 Chrome"
+          start: docker-compose up -d
+          wait-on: http://localhost:3000
         env:
           CI: true
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ENV: development
+          PORT: 3000
+          REACT_APP_API_AUTH: http://auth:3001"
