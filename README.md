@@ -1,5 +1,7 @@
 ![CollabCode](readme-files/collabcode.png "Logo da CollabCode")
 
+TEST DE GACTIONS
+
 # CollabCode Training
 
 An Open Source online course platform. It's the FrontEnd that use React.
